@@ -68,7 +68,7 @@ class Agent:
         self.memory.append(state, action, reward, next_state, done) # popleft if MAX_MEMORY is reached
 
     def train_long_memory(self):
-        
+        pass
 
     def train_short_memory(self, state, action, reward, next_state, done):
         pass
