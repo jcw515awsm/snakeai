@@ -45,7 +45,7 @@ class SnakeGameAI:
         self.display = pygame.display.set_mode((self.w, self.h))
         pygame.display.set_caption('Snake')
         self.clock = pygame.time.Clock()
-        self.reset
+        self.reset()
 
     def reset(self):
         # init game state
@@ -128,11 +128,13 @@ class SnakeGameAI:
         pygame.display.flip()
         
     def _move(self, action):
+        
         #[straight, right, left]
 
         clock_wise = [Direction.RIGHT, Direction.DOWN, Direction.LEFT, Direction.UP]
         idx = clock_wise.index(self.direction)
 
+        # print("changing direction")
         if np.array_equal(action, [1,0,0]):
             new_dir = clock_wise[idx] #no change
         elif np.array_equal(action, [0,1,0]):
